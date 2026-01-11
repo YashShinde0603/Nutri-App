@@ -1,26 +1,33 @@
-// app/page.tsx
-import Link from 'next/link';
-
+import Link from "next/link";
 
 export default function HomePage() {
-return (
-<div className="space-y-6">
-<h1 className="text-3xl font-bold">Welcome to NutritionApp</h1>
-<p className="text-slate-600">Quick links to manage your pantry and generate diet plans.</p>
+  return (
+    <section className="flex flex-col items-start gap-6">
+      <h1 className="text-4xl font-bold leading-tight">
+        Smart Nutrition,
+        <span className="text-brand"> Simplified</span>
+      </h1>
 
+      <p className="max-w-2xl text-gray-600 text-lg">
+        Nutri-App helps you manage your pantry and generate diet plans based on
+        available ingredients and nutrition data.
+      </p>
 
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<Link href="/pantry" className="p-6 bg-white rounded shadow hover:shadow-md">
-<h2 className="text-xl font-semibold">Pantry</h2>
-<p className="mt-2 text-slate-500">View and add items to your pantry.</p>
-</Link>
+      <div className="flex gap-4">
+        <Link
+          href="/pantry"
+          className="rounded-md bg-brand px-6 py-3 text-white font-medium hover:bg-brand-dark"
+        >
+          View Pantry
+        </Link>
 
-
-<Link href="/diet" className="p-6 bg-white rounded shadow hover:shadow-md">
-<h2 className="text-xl font-semibold">Diet Generator</h2>
-<p className="mt-2 text-slate-500">Generate weekly or monthly diet plans from your pantry.</p>
-</Link>
-</div>
-</div>
-);
+        <Link
+          href="/diet"
+          className="rounded-md border border-gray-300 px-6 py-3 font-medium hover:bg-gray-100"
+        >
+          Generate Diet
+        </Link>
+      </div>
+    </section>
+  );
 }
